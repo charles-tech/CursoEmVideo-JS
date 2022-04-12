@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Calcular Preço</title>
+  <style>
+      body{ font: normal 18pt Arial;
+    }
+    input {
+      font: normal 18pt Arial;
+      width: 100px;
+    }
+    div#res {
+      margin-top: 20px;
+    }
+
+  </style>
+</head>
+<body>
+  <h1>Calculadora de Preço</h1>
+  <input type="text" name="Produto" id="produto">Produto<br><br>
+  <input type="number" name="Ciclo" id="ciclo">+
+  <input type="number" name="Cavidade" id="cavidade">+
+  <input type="number" name="horaMauina" id="hm">
+  
+
+  <input type="button" value="Calcular" onclick="somar()">
+  <div id="res">Resultado</div>
+
+  <script>
+    var a = window.document.getElementById('res');
+    a.addEventListener('click', somar);
+    var nome = window.document.getElementById('produto');
+    function somar(){
+    var ciclo = window.document.getElementById('ciclo');
+    var cavidade = window.document.getElementById('cavidade');
+    var hm = window.document.getElementById('hm');
+    var segundos=3600;
+    
+    var n = nome.value;
+    var n1 = Number(ciclo.value);
+    var n2 = Number(cavidade.value);
+    var n3 = Number(hm.value);
+    var preco = (n3/((segundos / n1) * n2));
+    var preco = preco.toFixed(2);
+    res.innerHTML = `Preço do ${n} é R$: ${preco}`   
+
+    
+    a.style.background = 'blue';
+   
+   
+   }
+
+  </script>
+  
+</body>
+</html>
